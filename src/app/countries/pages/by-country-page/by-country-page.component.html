@@ -1,1 +1,32 @@
-<p>by-country-page works!</p>
+<h2>Buscar por capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Este el el componente padre
+      Es el componente que tiene la busqueda por capital
+    Esta recibiendo al componente hijo llamado searchbox
+    Es un componente de una caja de texto
+
+    Usamos placeholder como atributo de la variable que creamos
+    Alla en el componente hijo directamente
+    y le asignamos un valor desde aca
+    -->
+
+    <!-- Ahora usamos la variable creada en el hijo
+    llamada onValue y le emitimos lo que el padre le envia
+  por medio de una funcion -->
+    <app-search-box
+      (onValue)="searchByCountry($event)"
+      placeholder="Buscar por pais"
+      ></app-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- TableResult -->
+    <hr>
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
+</div>
